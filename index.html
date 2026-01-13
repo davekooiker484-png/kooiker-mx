@@ -4,52 +4,184 @@
 <meta charset="UTF-8">
 <title>Kooiker-MX</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font: Montserrat (soepeler / moderner) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* Algemene styling */
-body { margin:0; font-family:Arial; background:#111; color:#fff; }
-nav { background:#000; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
-nav a { color:#fff; margin-left:20px; text-decoration:none; font-weight:bold; }
-header { padding:100px 20px; text-align:center; }
-h1 { font-size:3rem; }
-p { color:#ccc; font-size:1.2rem; }
-.btn { margin-top:30px; display:inline-block; padding:15px 30px; background:#ff2a00; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; }
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: #000;
+}
 
-/* Dropdown menu */
-.dropdown { position: relative; display:inline-block; }
-.dropdown-content { display:none; position:absolute; background:#222; min-width:180px; z-index:1; flex-direction:column; }
-.dropdown-content a { color:#fff; padding:10px 20px; text-decoration:none; display:block; }
-.dropdown-content a:hover { background:#ff2a00; }
-.dropdown:hover .dropdown-content { display:flex; flex-direction:column; }
-.dropdown:hover > a { color:#ff2a00; }
+/* HEADER / NAV */
+header {
+  background: #000;
+  color: #fff;
+}
 
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+nav .menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: #000;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  background: #ff2a00;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+/* CONTENT BLOCKS */
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section.light {
+  background: #fff;
+  color: #000;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* NEWS GRID */
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.news-item {
+  flex: 1 1 300px;
+  background: #f9f9f9;
+  padding: 18px;
+  border-radius: 8px;
+}
+
+.news-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* CALENDAR LIST */
+.calendar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.calendar-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  nav .menu a {
+    margin-left: 15px;
+    font-size: 0.9rem;
+  }
+  .hero h1 { font-size: 2.5rem; }
+}
 </style>
 </head>
 <body>
 
-<nav>
-    <div>Kooiker-MX</div>
-    <div>
-        <a href="index.html">Home</a>
-        <a href="over.html">Over ons</a>
-        <a href="nieuws.html">Nieuws</a>
-        <a href="kalender.html">Kalender</a>
-        <a href="fotos.html">Foto’s</a>
-        <div class="dropdown">
-            <a href="sponsoring.html">Sponsoring &#9662;</a>
-            <div class="dropdown-content">
-                <a href="sponsor-worden.html">Sponsor worden</a>
-                <a href="supportersclub.html">Supportersclub</a>
-            </div>
-        </div>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
-
+<!-- NAV -->
 <header>
-    <h1>Kooiker-MX</h1>
-    <p>Volg onze races, trainingen en updates</p>
-    <a class="btn" href="nieuws.html">Bekijk nieuws</a>
+  <nav>
+    <div class="logo">Kooiker-MX</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="over.html">Over ons</a>
+      <a href="nieuws.html">Nieuws</a>
+      <a href="kalender.html">Kalender</a>
+      <a href="fotos.html">Foto’s</a>
+      <a href="sponsoring.html">Sponsoring</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 </header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Welkom bij Kooiker-MX</h1>
+  <p>Volg onze trainingen, races en avonturen. Blijf op de hoogte!</p>
+  <a class="btn" href="nieuws.html">Bekijk nieuws</a>
+</section>
+
+<!-- NIEUWS PREVIEW -->
+<section class="section light">
+  <h2>Laatste nieuws</h2>
+  <div class="news-grid">
+    <div class="news-item">
+      <h3>Nieuws Item Titel</h3>
+      <p>Korte teaser van het nieuwsbericht…</p>
+    </div>
+    <div class="news-item">
+      <h3>Nieuws Item Titel</h3>
+      <p>Korte teaser van het nieuwsbericht…</p>
+    </div>
+    <div class="news-item">
+      <h3>Nieuws Item Titel</h3>
+      <p>Korte teaser van het nieuwsbericht…</p>
+    </div>
+  </div>
+</section>
+
+<!-- KALENDER PREVIEW -->
+<section class="section">
+  <h2>Aankomende kalender</h2>
+  <ul class="calendar-list">
+    <li>10 Feb 2026 – NK Ronde 1</li>
+    <li>24 Feb 2026 – NK Ronde 2</li>
+    <li>10 Mar 2026 – DK Ronde</li>
+  </ul>
+</section>
 
 </body>
 </html>
